@@ -1,8 +1,114 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Important Links</h2>
-<ul class="list-group">
-  <li class="list-group-item"><a href="https://jausa.powerappsportals.com/opportunity/" target="_blank">Volunteer Registration</a></li>
-  <li class="list-group-item"><a href="https://chicagopublicschools.civicore.com/index.php?action=userLogin" target="_blank">CPS Registration</a></li>
-</ul>
+<div class="container py-5">
+
+  <!-- Page Header -->
+  <div class="text-center mb-5">
+    <h2 class="ja-bar d-inline-block px-4 fw-bold">Get Involved</h2>
+    <p class="mt-3">
+      Whether you’re a UChicago student eager to volunteer or a CPS teacher looking for a program, you’re in the right place.
+    </p>
+  </div>
+
+  <!-- Cards -->
+  <div class="row g-4">
+    <!-- Volunteer Card -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/volunteer.jpg') }}"
+          class="card-img-top"
+          alt="Volunteers">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Volunteer Registration</h5>
+          <p class="card-text flex-grow-1">
+            Join 60+ UChicago volunteers and lead hands-on financial-literacy and entrepreneurship workshops 
+            for Chicago Public School students.
+          </p>
+          <a
+            href="https://jausa.powerappsportals.com/opportunity/"
+            target="_blank"
+            class="btn btn-primary mt-3">
+            Sign Up to Volunteer
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CPS Card -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ url_for('static', filename='images/cps_classroom.jpg') }}"
+          class="card-img-top"
+          alt="CPS Classroom">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">CPS Registration</h5>
+          <p class="card-text flex-grow-1">
+            Teachers and administrators: register your class for our financial-literacy and career readiness programs.
+          </p>
+          <a
+            href="https://chicagopublicschools.civicore.com/index.php?action=userLogin"
+            target="_blank"
+            class="btn btn-primary mt-3">
+            Register Your Class
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Volunteer FAQs -->
+  <div class="mt-5">
+    <h3 class="mb-3">Volunteer FAQs</h3>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading1">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq1"
+            aria-expanded="false"
+            aria-controls="faq1">
+            Who can volunteer?
+          </button>
+        </h2>
+        <div
+          id="faq1"
+          class="accordion-collapse collapse"
+          aria-labelledby="faqHeading1"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Any UChicago student in good standing—no prior teaching experience required.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading2">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq2"
+            aria-expanded="false"
+            aria-controls="faq2">
+            What’s the time commitment?
+          </button>
+        </h2>
+        <div
+          id="faq2"
+          class="accordion-collapse collapse"
+          aria-labelledby="faqHeading2"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            A typical module lasts 2–3 hours, including prep and classroom time.
+          </div>
+        </div>
+      </div>
+      <!-- add more FAQs as needed -->
+    </div>
+  </div>
+
+</div>
 {% endblock %}

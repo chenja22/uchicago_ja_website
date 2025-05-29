@@ -1,7 +1,29 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 .card {
   border: none;
   border-radius: 0.5rem;
+}
+
+.carousel-image {
+  height: 400px;         
+  object-fit: cover;
+  width: 100%; 
+}
+
+.ja-blue {
+  color: #2C5F73;
+}
+
+.btn-primary {
+  background-color: #2C5F73 !important;
+  border-color:    #2C5F73 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #244b5c !important;
+  border-color:    #244b5c !important;
 }

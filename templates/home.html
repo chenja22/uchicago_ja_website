@@ -2,20 +2,28 @@
 {% block content %}
 
 
-  <!-- Existing Home Content -->
-  <div class="text-center">
-    <h1>Welcome to UChicago Junior Achievement</h1>
-    <p class="lead">
-      Junior Achievement at the University of Chicago (UChicago JA) is a chapter of non-profit organization Junior Achievement USA (JA USA). We help connect UChicago students with opportunities to volunteer through JA USA. JA programs focus on teaching students about financial literacy, entrepreneurship, and career readiness and impact 4.4 million students annually.
-    </p>
-    <div class="card p-3 mt-4 shadow-sm">
-      <h4 class="card-title">Mission Statement</h4>
-      <p>
-        At UChicago Junior Achievement, we empower the next generation of leaders by promoting financial literacy, entrepreneurship, and career readiness...
-      </p>
-    </div>
-  </div>
+  <!-- Welcome + Mission -->
+  <div class="text-center mb-5">
+  <h1 class="fw-bold ja-blue">Welcome to UChicago Junior Achievement</h1>
   
+  <!-- Hook + impact stats in one punchy paragraph -->
+  <p class="lead">
+    Ready to ignite real change? Every year, our 60+ UChicago volunteers deliver hands-on 
+    financial literacy, entrepreneurship, and career-readiness workshops to over 300 CPS students 
+    across five neighborhood schools.
+  </p>
+
+  <!-- Mission card with benefit-driven language and CTA -->
+  <div class="card p-4 mt-4 shadow-sm mx-auto" style="max-width:600px;">
+    <h4 class="card-title">Our Mission</h4>
+    <p>
+      We empower tomorrow’s leaders with the skills, confidence, and vision to thrive—in the 
+      classroom, the boardroom, and beyond.
+    </p>
+    <a href="{{ url_for('join') }}" class="btn btn-primary mt-3">Join the Movement</a>
+  </div>
+</div>
+
   <!-- Carousel -->
   <div id="eventCarousel" class="carousel slide mx-auto mb-5" data-bs-ride="carousel" style="max-width:800px;">
     <div class="carousel-inner">
@@ -23,7 +31,7 @@
       <div class="carousel-item {% if loop.first %}active{% endif %}">
         <img
           src="{{ url_for('static', filename='images/slideshow/' ~ filename) }}"
-          class="d-block w-100"
+          class="d-block carousel-image"
           alt="Event photo {{ loop.index }}">
       </div>
       {% endfor %}
@@ -36,6 +44,74 @@
       <span class="carousel-control-next-icon"></span>
       <span class="visually-hidden">Next</span>
     </button>
+  </div>
+
+  <!-- Get Involved Cards -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4 text-center">Get Involved</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Volunteer Registration</h5>
+              <p class="flex-grow-1">Sign up to volunteer through the Junior Achievement USA portal.</p>
+              <a href="{{ url_for('links') }}" class="btn btn-primary mt-3">Go to Volunteer Registration</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">CPS Registration</h5>
+              <p class="flex-grow-1">Register Chicago Public School students via the CPS portal.</p>
+              <a href="{{ url_for('links') }}" class="btn btn-primary mt-3">Go to CPS Registration</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats as Table -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Our Impact</h2>
+
+    <div class="table-responsive">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td>
+              <h3 class="mb-1">{{ stats.students }}</h3>
+              <small class="text-muted">CPS Students Impacted</small>
+            </td>
+            <td>
+              <h3 class="mb-1">{{ stats.volunteers }}</h3>
+              <small class="text-muted">Volunteers</small>
+            </td>
+            <td>
+              <h3 class="mb-1">{{ stats.schools|length }}</h3>
+              <small class="text-muted">Schools</small>
+            </td>
+            <td>
+              <h3 class="mb-1">{{ stats.alumni_goals }}</h3>
+              <small class="text-muted">Alumni Believe in Their Goals</small>
+            </td>
+            <td>
+              <h3 class="mb-1">{{ stats.alumni_literacy }}</h3>
+              <small class="text-muted">Alumni Improved Financial Literacy</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+  <!-- Call to Join -->
+  <div class="text-center my-5">
+    <a href="{{ url_for('join') }}" class="btn btn-lg btn-primary">Join the Team</a>
   </div>
 
 {% endblock %}
