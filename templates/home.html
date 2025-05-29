@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <!-- Existing Home Content -->
+  <div class="text-center">
+    <h1>Welcome to UChicago Junior Achievement</h1>
+    <p class="lead">
+      Junior Achievement at the University of Chicago (UChicago JA) is a chapter of non-profit organization Junior Achievement USA (JA USA). We help connect UChicago students with opportunities to volunteer through JA USA. JA programs focus on teaching students about financial literacy, entrepreneurship, and career readiness and impact 4.4 million students annually.
+    </p>
+    <div class="card p-3 mt-4 shadow-sm">
+      <h4 class="card-title">Mission Statement</h4>
+      <p>
+        At UChicago Junior Achievement, we empower the next generation of leaders by promoting financial literacy, entrepreneurship, and career readiness...
+      </p>
+    </div>
+  </div>
+  
+  <!-- Carousel -->
+  <div id="eventCarousel" class="carousel slide mx-auto mb-5" data-bs-ride="carousel" style="max-width:800px;">
+    <div class="carousel-inner">
+      {% for filename in slides %}
+      <div class="carousel-item {% if loop.first %}active{% endif %}">
+        <img
+          src="{{ url_for('static', filename='images/slideshow/' ~ filename) }}"
+          class="d-block w-100"
+          alt="Event photo {{ loop.index }}">
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+{% endblock %}

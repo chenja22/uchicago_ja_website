@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Our Impact</h2>
+<div class="row text-center">
+  <div class="col-md-4 mb-3">
+    <div class="card p-3">
+      <h3>{{ stats.students }}</h3>
+      <p>CPS students impacted</p>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card p-3">
+      <h3>{{ stats.volunteers }}</h3>
+      <p>Volunteers</p>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card p-3">
+      <h3>{{ stats.schools|length }}</h3>
+      <p>Schools</p>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-md-6 mb-3">
+    <div class="card p-3">
+      <p>90% of JA Alumni say JA helped them believe in their goals</p>
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <div class="card p-3">
+      <p>84% of JA Alumni say it helped with financial literacy</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
